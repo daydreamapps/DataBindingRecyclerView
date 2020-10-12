@@ -1,2 +1,3 @@
+include ':bindingrecycler'
 include ':app'
 rootProject.name = "DataBindingRecycler"
