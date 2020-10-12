@@ -1,4 +1,4 @@
-package com.daydreamapplications.myapplication
+package com.daydreamapplications.sample
 
 import androidx.appcompat.app.AppCompatActivity
 
