@@ -1,16 +1,11 @@
 package com.daydreamapplications.bindingrecycler
 
 import androidx.lifecycle.*
+import androidx.recyclerview.widget.RecyclerView
 
-/**
- * Utility class to safely observe and relay the state of a LifecycleOwner
- *
- * @see LifecycleObserver
- * @see LifecycleOwner
- */
-open class LifecycleRelay : LifecycleObserver, LifecycleOwner {
+abstract class LifecycleRecyclerAdapter<VH : RecyclerView.ViewHolder> : RecyclerView.Adapter<VH>(), LifecycleObserver, LifecycleOwner {
 
-    private val lifecycleRegistry = LifecycleRegistry(this)
+    protected val lifecycleRegistry = LifecycleRegistry(this)
 
     override fun getLifecycle(): Lifecycle = lifecycleRegistry
 
