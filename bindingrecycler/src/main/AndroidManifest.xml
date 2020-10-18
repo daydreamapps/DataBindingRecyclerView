@@ -1,5 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.daydreamapplications.bindingrecycler">
-
-    /
-</manifest>
+<manifest package="com.daydreamapplications.bindingrecycler" />

@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout>
+<?xml version="1.0" encoding="utf-8"?><!-- Dummy view used to ensure generation of entry BR.viewModel -->
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
 
     <data>
 
         <variable
             name="viewModel"
-            type="android.view.View" />
+            type="Object" />
+
     </data>
 
-    <View xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:text="@string/dummy_view" />
 
 </layout>

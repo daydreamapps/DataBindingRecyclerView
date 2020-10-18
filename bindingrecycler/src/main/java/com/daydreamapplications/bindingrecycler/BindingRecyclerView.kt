@@ -43,7 +43,7 @@ class BindingRecyclerView @JvmOverloads constructor(
          * If false: notifyDataSetChanged is invoked.
          *
          * Note:
-         * When set to true, multiple rapid calls to setViewModels can result in unusual behaviour as diffUtil dispatches interfer with one another.
+         * When set to true, multiple rapid calls to setViewModels can result in unusual behaviour as diffUtil dispatches interfere with one another.
          * If this applies, set to false, or use custom RecyclerView.Adapter for this scenario.
          *
          *
@@ -110,7 +110,7 @@ class BindingRecyclerView @JvmOverloads constructor(
         /**
          * Return layoutRes id for view model in position
          *
-         * Layout MUST use databinding, have generated ViewDataBinding file and include variable `viewModel` of type matching item in position.
+         * Layout MUST use data binding, have generated ViewDataBinding file and include variable `viewModel` of type matching item in position.
          *
          * e.g.
          * <layout>
@@ -129,16 +129,19 @@ class BindingRecyclerView @JvmOverloads constructor(
         abstract fun getItemLayoutRes(position: Int): Int
 
         /**
-         * Default implementation overidden to delegate to getItemLayoutRes, required in onCreateViewHolder
+         * Default implementation overridden to delegate to getItemLayoutRes, required in onCreateViewHolder
          *
          * Do not override.
          * @see getItemLayoutRes
          */
-        @Deprecated(message = "Do not override. Override Adapter.getItemLayoutRes(position) instead")
+        @Deprecated(
+            message = "Do not override. Override Adapter.getItemLayoutRes(position) instead",
+            replaceWith = ReplaceWith("Nothing, should not be invoked manually")
+        )
         override fun getItemViewType(position: Int): Int = getItemLayoutRes(position)
 
         /**
-         * Default implementation overidden to delegate to getItemLayoutRes, required in onCreateViewHolder
+         * Default implementation overridden to delegate to getItemLayoutRes, required in onCreateViewHolder
          *
          * Do not override.
          * @see getItemLayoutRes
@@ -175,7 +178,10 @@ class BindingRecyclerView @JvmOverloads constructor(
         @Suppress("UNCHECKED_CAST")
         @JvmStatic
         @BindingAdapter("viewModels")
-        fun <T : Any> setRecyclerItems(lifecycleRecyclerView: BindingRecyclerView, items: List<T>?) {
+        fun <T : Any> setRecyclerItems(
+            lifecycleRecyclerView: BindingRecyclerView,
+            items: List<T>?
+        ) {
             (lifecycleRecyclerView.adapter as? Adapter<T>)?.viewModels = items ?: emptyList()
         }
 
