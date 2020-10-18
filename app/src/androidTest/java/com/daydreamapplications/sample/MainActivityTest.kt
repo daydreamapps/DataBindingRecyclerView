@@ -16,11 +16,11 @@ import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4::class)
-class SampleActivityTest {
+class MainActivityTest {
 
     @get:Rule
-    val activityRule: ActivityScenarioRule<SampleActivity> =
-        ActivityScenarioRule(SampleActivity::class.java)
+    val activityRule: ActivityScenarioRule<MainActivity> =
+        ActivityScenarioRule(MainActivity::class.java)
 
     @Before
     fun initValidString() {

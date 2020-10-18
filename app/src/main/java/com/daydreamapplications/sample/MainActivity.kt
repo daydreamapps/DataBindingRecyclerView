@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.daydreamapplications.sample.databinding.ActivityMainBinding
 
-class SampleActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,11 +14,11 @@ class SampleActivity : AppCompatActivity() {
             setContentView(root)
 
             buttonSingleItemType.setOnClickListener {
-                startActivity(Intent(this@SampleActivity, SingleItemTypeActivity::class.java))
+                startActivity(Intent(this@MainActivity, SingleItemTypeActivity::class.java))
             }
 
             buttonMultipleItemTypes.setOnClickListener {
-                startActivity(Intent(this@SampleActivity, MultipleItemTypesActivity::class.java))
+                startActivity(Intent(this@MainActivity, MultipleItemTypesActivity::class.java))
             }
         }
     }
