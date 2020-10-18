@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DataBindingRecycler Sample</string>
     <string name="single_item_type">Single Item Type</string>
+    <string name="multiple_item_types">Multiple Item Types</string>
 </resources>

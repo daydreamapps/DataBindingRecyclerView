@@ -15,7 +15,11 @@ class SampleActivity : AppCompatActivity() {
             setContentView(root)
 
             buttonSingleItemType.setOnClickListener {
-                startActivity(Intent(this@SampleActivity, SingleItemTypeSampleActivity::class.java))
+                startActivity(Intent(this@SampleActivity, SingleItemTypeActivity::class.java))
+            }
+
+            buttonMultipleItemTypes.setOnClickListener {
+                startActivity(Intent(this@SampleActivity, MultipleItemTypesActivity::class.java))
             }
         }
     }

@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SingleItemTypeSampleActivity"/>
+        <activity android:name=".SingleItemTypeActivity" />
+        <activity android:name=".MultipleItemTypesActivity" />
 
     </application>
 
