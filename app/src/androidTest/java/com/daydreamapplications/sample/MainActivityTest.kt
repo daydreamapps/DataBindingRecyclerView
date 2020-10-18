@@ -1,58 +1,61 @@
 package com.daydreamapplications.sample
 
 import android.widget.TextView
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withParent
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.screen.Screen.Companion.onScreen
+import com.agoda.kakao.text.KButton
+import com.agoda.kakao.text.KTextView
 import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.CoreMatchers.instanceOf
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
     @get:Rule
-    val activityRule: ActivityScenarioRule<MainActivity> =
-        ActivityScenarioRule(MainActivity::class.java)
-
-    @Before
-    fun initValidString() {
-    }
+    val activityRule: ActivityScenarioRule<MainActivity> = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun titleText_isCorrect() {
-        onView(allOf(instanceOf(TextView::class.java), withParent(withResourceName("action_bar"))))
-            .check(matches(withText(R.string.app_name)))
+        onScreen<MainActivityScene> {
+            toolbar { hasText(R.string.app_name) }
+        }
     }
 
     @Test
     fun clickSingleItemTypeButton_openSingleItemTypeActivity_seeTitleAndRecycler() {
-        onView(withId(R.id.button_single_item_type))
-            .perform(click())
-
-
-        onView(allOf(instanceOf(TextView::class.java), withParent(withResourceName("action_bar"))))
-            .check(matches(withText(R.string.single_item_type)))
-
-        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
+        onScreen<MainActivityScene> {
+            singleItemTypeButton { click() }
+            toolbar { hasText(R.string.single_item_type) }
+        }
     }
 
     @Test
     fun clickMultipleItemTypesButton_openMultipleItemTypesActivity_seeTitleAndRecycler() {
-        onView(withId(R.id.button_multiple_item_types))
-            .perform(click())
+        onScreen<MainActivityScene> {
+            multipleItemTypesButton { click() }
+            toolbar { hasText(R.string.multiple_item_types) }
+        }
+    }
+}
 
+private class MainActivityScene : Screen<MainActivityScene>() {
 
-        onView(allOf(instanceOf(TextView::class.java), withParent(withResourceName("action_bar"))))
-            .check(matches(withText(R.string.multiple_item_types)))
+    val singleItemTypeButton: KButton = KButton { withId(R.id.button_single_item_type) }
+    val multipleItemTypesButton: KButton = KButton { withId(R.id.button_multiple_item_types) }
 
-        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
+    val toolbar: KTextView = KTextView {
+        withMatcher(
+            allOf(
+                instanceOf(TextView::class.java),
+                withParent(ViewMatchers.withResourceName("action_bar"))
+            )
+        )
     }
 }
