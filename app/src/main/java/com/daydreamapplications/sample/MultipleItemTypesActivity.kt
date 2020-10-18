@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.daydreamapplications.bindingrecycler.BindingRecyclerView
-import com.daydreamapplications.sample.databinding.ActivitySampleSingleItemTypeBinding
+import com.daydreamapplications.sample.databinding.ActivitySampleBinding
 
 class MultipleItemTypesActivity : AppCompatActivity() {
 
@@ -16,11 +16,11 @@ class MultipleItemTypesActivity : AppCompatActivity() {
 
         val adapter = Adapter()
         adapter.viewModels = listOf(
-            Models.TitleWithIcon("Hello", R.drawable.ic_launcher_foreground),
+            Models.TitleWithIcon("Hello", R.drawable.circle),
             Models.Title("World")
         )
 
-        ActivitySampleSingleItemTypeBinding.inflate(layoutInflater).apply {
+        ActivitySampleBinding.inflate(layoutInflater).apply {
             setContentView(root)
             recyclerView.adapter = adapter
         }

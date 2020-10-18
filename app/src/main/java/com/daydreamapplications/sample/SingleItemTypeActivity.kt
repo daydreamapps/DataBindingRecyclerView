@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.daydreamapplications.bindingrecycler.BindingRecyclerView
-import com.daydreamapplications.sample.databinding.ActivitySampleSingleItemTypeBinding
+import com.daydreamapplications.sample.databinding.ActivitySampleBinding
 
 class SingleItemTypeActivity : AppCompatActivity() {
 
@@ -16,7 +16,7 @@ class SingleItemTypeActivity : AppCompatActivity() {
         val adapter = Adapter()
         adapter.viewModels = listOf("Hello", "World")
 
-        ActivitySampleSingleItemTypeBinding.inflate(layoutInflater).apply {
+        ActivitySampleBinding.inflate(layoutInflater).apply {
             setContentView(root)
             recyclerView.adapter = adapter
         }
