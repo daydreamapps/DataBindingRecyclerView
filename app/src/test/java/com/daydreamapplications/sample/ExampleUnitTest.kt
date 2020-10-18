@@ -1,4 +1,4 @@
-package com.daydreamapplications.myapplication
+package com.daydreamapplications.sample
 
 import org.junit.Test
 
