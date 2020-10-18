@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, SingleItemTypeActivity::class.java))
             }
 
+            buttonSingleItemTypeAsync.setOnClickListener {
+                startActivity(Intent(this@MainActivity, SingleItemTypeAsyncActivity::class.java))
+            }
+
             buttonMultipleItemTypes.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MultipleItemTypesActivity::class.java))
             }

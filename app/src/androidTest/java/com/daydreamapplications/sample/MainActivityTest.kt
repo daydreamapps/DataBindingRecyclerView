@@ -24,23 +24,31 @@ class MainActivityTest {
     @Test
     fun titleText_isCorrect() {
         onScreen<MainActivityScene> {
-            toolbar { hasText(R.string.app_name) }
+            toolbar.hasText(R.string.app_name)
         }
     }
 
     @Test
     fun clickSingleItemTypeButton_openSingleItemTypeActivity_seeTitleAndRecycler() {
         onScreen<MainActivityScene> {
-            singleItemTypeButton { click() }
-            toolbar { hasText(R.string.single_item_type) }
+            singleItemTypeButton.click()
+            toolbar.hasText(R.string.single_item_type)
+        }
+    }
+
+    @Test
+    fun clickSingleItemTypeAsyncButton_openSingleItemTypeAsyncActivity_seeTitleAndRecycler() {
+        onScreen<MainActivityScene> {
+            singleItemTypeAsync.click()
+            toolbar.hasText(R.string.single_item_type_async)
         }
     }
 
     @Test
     fun clickMultipleItemTypesButton_openMultipleItemTypesActivity_seeTitleAndRecycler() {
         onScreen<MainActivityScene> {
-            multipleItemTypesButton { click() }
-            toolbar { hasText(R.string.multiple_item_types) }
+            multipleItemTypesButton.click()
+            toolbar.hasText(R.string.multiple_item_types)
         }
     }
 }
@@ -48,6 +56,7 @@ class MainActivityTest {
 private class MainActivityScene : Screen<MainActivityScene>() {
 
     val singleItemTypeButton: KButton = KButton { withId(R.id.button_single_item_type) }
+    val singleItemTypeAsync: KButton = KButton { withId(R.id.button_single_item_type_async) }
     val multipleItemTypesButton: KButton = KButton { withId(R.id.button_multiple_item_types) }
 
     val toolbar: KTextView = KTextView {

@@ -104,6 +104,8 @@ class BindingRecyclerView @JvmOverloads constructor(
                 false
             )
 
+            binding.lifecycleOwner = this
+
             return ViewHolder(binding)
         }
 

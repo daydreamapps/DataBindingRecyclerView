@@ -21,10 +21,18 @@
                     android:text="@string/single_item_type" />
 
                 <Button
+                    android:id="@+id/button_single_item_type_async"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/single_item_type_async" />
+
+                <Button
                     android:id="@+id/button_multiple_item_types"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/multiple_item_types" />
+
+
 
             </LinearLayout>
 
