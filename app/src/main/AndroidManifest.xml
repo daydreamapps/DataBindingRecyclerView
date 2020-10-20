@@ -17,9 +17,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".MultipleItemTypesActivity" />
         <activity android:name=".SingleItemTypeActivity" />
         <activity android:name=".SingleItemTypeAsyncActivity" />
-        <activity android:name=".MultipleItemTypesActivity" />
+        <activity android:name=".SortingActivity" />
 
     </application>
 

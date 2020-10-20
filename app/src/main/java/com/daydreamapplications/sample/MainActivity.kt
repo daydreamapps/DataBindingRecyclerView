@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             buttonMultipleItemTypes.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MultipleItemTypesActivity::class.java))
             }
+
+            buttonSorting.setOnClickListener {
+                startActivity(Intent(this@MainActivity, SortingActivity::class.java))
+            }
         }
     }
 }
