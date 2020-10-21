@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.daydreamapplications.bindingrecycler.BindingRecyclerView
 import com.daydreamapplications.sample.databinding.ActivitySampleBinding
 
-class SortingActivity : AppCompatActivity() {
+class DiffUtilSortActivity : AppCompatActivity() {
 
     private val adapter = Adapter()
 
@@ -24,7 +24,7 @@ class SortingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar?.title = getString(R.string.sorting)
+        supportActionBar?.title = getString(R.string.diff_util_sorting)
 
         adapter.viewModels = items
 

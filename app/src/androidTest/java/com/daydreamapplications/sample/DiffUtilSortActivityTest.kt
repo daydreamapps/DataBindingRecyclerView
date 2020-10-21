@@ -16,10 +16,10 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class SortingActivityTest {
+class DiffUtilSortActivityTest {
 
     @get:Rule
-    val activityRule: ActivityScenarioRule<SortingActivity> = ActivityScenarioRule(SortingActivity::class.java)
+    val activityRule: ActivityScenarioRule<DiffUtilSortActivity> = ActivityScenarioRule(DiffUtilSortActivity::class.java)
 
     @Test
     fun itemsOfOneType_correctlyDisplayedInRecyclerView() {

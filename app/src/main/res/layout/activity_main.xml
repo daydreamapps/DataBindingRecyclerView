@@ -33,10 +33,10 @@
                     android:text="@string/multiple_item_types" />
 
                 <Button
-                    android:id="@+id/button_sorting"
+                    android:id="@+id/button_diff_util_sorting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sorting" />
+                    android:text="@string/diff_util_sorting" />
 
             </LinearLayout>
 

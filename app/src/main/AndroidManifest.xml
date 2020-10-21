@@ -20,7 +20,7 @@
         <activity android:name=".MultipleItemTypesActivity" />
         <activity android:name=".SingleItemTypeActivity" />
         <activity android:name=".SingleItemTypeAsyncActivity" />
-        <activity android:name=".SortingActivity" />
+        <activity android:name=".DiffUtilSortActivity" />
 
     </application>
 

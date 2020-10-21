@@ -3,5 +3,5 @@
     <string name="single_item_type">Single Item Type</string>
     <string name="multiple_item_types">Multiple Item Types</string>
     <string name="single_item_type_async">Single Item Type Async</string>
-    <string name="sorting">Sorting</string>
+    <string name="diff_util_sorting">Diff Util Sorting</string>
 </resources>

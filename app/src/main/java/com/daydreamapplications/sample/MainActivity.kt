@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, MultipleItemTypesActivity::class.java))
             }
 
-            buttonSorting.setOnClickListener {
-                startActivity(Intent(this@MainActivity, SortingActivity::class.java))
+            buttonDiffUtilSorting.setOnClickListener {
+                startActivity(Intent(this@MainActivity, DiffUtilSortActivity::class.java))
             }
         }
     }
