@@ -23,6 +23,7 @@ class DiffUtilSortActivityTest {
 
     @Test
     fun itemsOfOneType_correctlyDisplayedInRecyclerView() {
+
         // Check initial state of list
         onScreen<SortingScreen> {
             recycler {

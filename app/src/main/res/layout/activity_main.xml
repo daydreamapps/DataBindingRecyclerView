@@ -44,6 +44,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/diff_util_add_remove" />
 
+                <Button
+                    android:id="@+id/button_diff_util_add_remove_random"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diff_util_add_remove_random" />
+
             </LinearLayout>
 
         </ScrollView>
