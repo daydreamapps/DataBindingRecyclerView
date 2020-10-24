@@ -38,6 +38,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/diff_util_sorting" />
 
+                <Button
+                    android:id="@+id/button_diff_util_add_remove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diff_util_add_remove" />
+
             </LinearLayout>
 
         </ScrollView>

@@ -4,4 +4,8 @@
     <string name="multiple_item_types">Multiple Item Types</string>
     <string name="single_item_type_async">Single Item Type Async</string>
     <string name="diff_util_sorting">Diff Util Sorting</string>
+    <string name="diff_util_add_remove">Diff Util Add/Remove</string>
+    <string name="diff_util_add_remove_random">Diff Util Add/Remove Random</string>
+    <string name="remove_item">Remove Item</string>
+    <string name="add_item">Add Item</string>
 </resources>

@@ -53,10 +53,18 @@ class MainActivityTest {
     }
 
     @Test
-    fun clickDiffUtilButton_openSortingActivity_seeTitleAndRecycler() {
+    fun clickDiffUtilSortingButton_openSortingActivity_seeTitleAndRecycler() {
         onScreen<MainActivityScene> {
             diffUtilSortingButton.click()
             toolbar.hasText(R.string.diff_util_sorting)
+        }
+    }
+
+    @Test
+    fun clickDiffUtilAddRemoveButton_openSortingActivity_seeTitleAndRecycler() {
+        onScreen<MainActivityScene> {
+            diffUtilAddRemoveButton.click()
+            toolbar.hasText(R.string.diff_util_add_remove)
         }
     }
 }
@@ -67,6 +75,7 @@ private class MainActivityScene : Screen<MainActivityScene>() {
     val singleItemTypeAsync: KButton = KButton { withId(R.id.button_single_item_type_async) }
     val multipleItemTypesButton: KButton = KButton { withId(R.id.button_multiple_item_types) }
     val diffUtilSortingButton: KButton = KButton { withId(R.id.button_diff_util_sorting) }
+    val diffUtilAddRemoveButton: KButton = KButton { withId(R.id.button_diff_util_add_remove) }
 
     val toolbar: KTextView = KTextView {
         withMatcher(

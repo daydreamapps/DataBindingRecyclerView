@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             buttonDiffUtilSorting.setOnClickListener {
                 startActivity(Intent(this@MainActivity, DiffUtilSortActivity::class.java))
             }
+
+            buttonDiffUtilAddRemove.setOnClickListener {
+                startActivity(Intent(this@MainActivity, DiffUtilAddRemoveActivity::class.java))
+            }
         }
     }
 }
