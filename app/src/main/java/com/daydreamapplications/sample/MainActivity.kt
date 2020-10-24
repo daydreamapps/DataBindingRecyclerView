@@ -24,6 +24,18 @@ class MainActivity : AppCompatActivity() {
             buttonMultipleItemTypes.setOnClickListener {
                 startActivity(Intent(this@MainActivity, MultipleItemTypesActivity::class.java))
             }
+
+            buttonDiffUtilSorting.setOnClickListener {
+                startActivity(Intent(this@MainActivity, DiffUtilSortActivity::class.java))
+            }
+
+            buttonDiffUtilAddRemove.setOnClickListener {
+                startActivity(Intent(this@MainActivity, DiffUtilAddRemoveActivity::class.java))
+            }
+
+            buttonDiffUtilAddRemoveRandom.setOnClickListener {
+                startActivity(Intent(this@MainActivity, DiffUtilAddRemoveRandomActivity::class.java))
+            }
         }
     }
 }
