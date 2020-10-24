@@ -5,7 +5,6 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.daydreamapplications.bindingrecycler.BindingRecyclerView
 import com.daydreamapplications.sample.databinding.ActivityAddRemoveBinding
-import kotlin.random.Random
 
 class DiffUtilAddRemoveActivity : AppCompatActivity() {
 
@@ -22,17 +21,19 @@ class DiffUtilAddRemoveActivity : AppCompatActivity() {
             setContentView(root)
             recyclerView.adapter = adapter
 
+            // Add new item to end of list
             buttonAddItem.setOnClickListener {
-                val current = adapter.viewModels
-                adapter.viewModels = (current + Random.nextInt(10).toString()).sorted()
-//                adapter.viewModels = current + (current.size).toString()
+                val currentItems = adapter.viewModels
+                val newItem = currentItems.size.toString()
+                adapter.viewModels = currentItems + newItem
             }
 
+            // Remove last item in list
             buttonRemoveItem.setOnClickListener {
-                val current = adapter.viewModels
-                if (current.isNotEmpty()) {
-//                    adapter.viewModels = current.toMutableList().minusElement(current[Random.nextInt(current.lastIndex)])
-                    adapter.viewModels = current.minus(current[Random.nextInt(current.lastIndex)])
+                val currentItems = adapter.viewModels
+
+                if (currentItems.isNotEmpty()) {
+                    adapter.viewModels = currentItems.subList(0, currentItems.lastIndex)
                 }
             }
         }
