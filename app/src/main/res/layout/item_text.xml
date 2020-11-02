@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.daydreamapplications.sample.MultipleItemTypesActivity.Models.Title" />
+            type="com.daydreamapplications.sample.MultiTypeAdapter.Models.Text" />
 
     </data>
 

@@ -29,11 +29,10 @@ class BindingRecyclerView @JvmOverloads constructor(
     }
 
 
-    abstract class Adapter<VM> : LifecycleRecyclerAdapter<ViewHolder>(),
+    abstract class Adapter<VM>(viewModels: Collection<VM> = emptyList()) :
+        LifecycleRecyclerAdapter<ViewHolder>(),
         LifecycleOwner,
         LifecycleObserver {
-
-        override fun getLifecycle(): Lifecycle = lifecycleRegistry
 
         /**
          * Switch value to determine how updates are dispatched upon setViewModels being called
@@ -80,6 +79,12 @@ class BindingRecyclerView @JvmOverloads constructor(
          * Invoked by function Adapter.onClick (if not overridden)
          */
         var doOnClick: (View, VM) -> Unit = { _, _ -> }
+
+        init {
+            this.viewModels = viewModels.toList()
+        }
+
+        override fun getLifecycle(): Lifecycle = lifecycleRegistry
 
 
         /**
