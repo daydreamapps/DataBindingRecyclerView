@@ -67,14 +67,6 @@ class MainActivityTest {
             toolbar.hasText(R.string.diff_util_add_remove)
         }
     }
-
-    @Test
-    fun clickDiffUtilAddRemoveRandomButton_opensActivity() {
-        onScreen<MainActivityScene> {
-            diffUtilAddRemoveRandomButton.click()
-            toolbar.hasText(R.string.diff_util_add_remove_random)
-        }
-    }
 }
 
 private class MainActivityScene : Screen<MainActivityScene>() {
@@ -84,7 +76,6 @@ private class MainActivityScene : Screen<MainActivityScene>() {
     val multipleItemTypesButton: KButton = KButton { withId(R.id.button_multiple_item_types) }
     val diffUtilSortingButton: KButton = KButton { withId(R.id.button_diff_util_sorting) }
     val diffUtilAddRemoveButton: KButton = KButton { withId(R.id.button_diff_util_add_remove) }
-    val diffUtilAddRemoveRandomButton: KButton = KButton { withId(R.id.button_diff_util_add_remove_random) }
 
     val toolbar: KTextView = KTextView {
         withMatcher(
