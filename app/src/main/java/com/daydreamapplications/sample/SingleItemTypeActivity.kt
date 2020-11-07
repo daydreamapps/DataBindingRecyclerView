@@ -11,7 +11,7 @@ class SingleItemTypeActivity : AppCompatActivity() {
 
         supportActionBar?.title = getString(R.string.single_item_type)
 
-        val adapter = TextAdapter(
+        val adapter = SimpleStringAdapter(
             viewModels = listOf(
                 "Hello", "World"
             )
