@@ -22,7 +22,6 @@
         <activity android:name=".SingleItemTypeAsyncActivity" />
         <activity android:name=".DiffUtilSortActivity" />
         <activity android:name=".DiffUtilAddRemoveActivity" />
-        <activity android:name=".DiffUtilAddRemoveRandomActivity" />
 
     </application>
 
