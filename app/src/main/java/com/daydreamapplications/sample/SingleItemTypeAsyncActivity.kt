@@ -62,7 +62,6 @@ class SingleItemTypeAsyncActivity : AppCompatActivity() {
                 }
 
                 handler.post(runnable)
-//                value = ""
             }
         }
     }

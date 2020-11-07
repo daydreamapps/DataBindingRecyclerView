@@ -123,7 +123,7 @@ private class DiffUtilAddRemoveScreen : Screen<DiffUtilAddRemoveScreen>() {
     })
 
     class Item(parent: Matcher<View>) : KRecyclerItem<Item>(parent) {
-        val text: KTextView = KTextView(parent) { withId(R.id.textView) }
+        val text: KTextView = KTextView(parent) { withId(R.id.title) }
     }
 }
 

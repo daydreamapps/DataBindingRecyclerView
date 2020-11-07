@@ -32,10 +32,6 @@ class MainActivity : AppCompatActivity() {
             buttonDiffUtilAddRemove.setOnClickListener {
                 startActivity(Intent(this@MainActivity, DiffUtilAddRemoveActivity::class.java))
             }
-
-            buttonDiffUtilAddRemoveRandom.setOnClickListener {
-                startActivity(Intent(this@MainActivity, DiffUtilAddRemoveRandomActivity::class.java))
-            }
         }
     }
 }

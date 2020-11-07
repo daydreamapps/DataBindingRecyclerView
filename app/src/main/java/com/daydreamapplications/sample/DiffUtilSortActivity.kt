@@ -3,29 +3,19 @@ package com.daydreamapplications.sample
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import com.daydreamapplications.bindingrecycler.BindingRecyclerView
 import com.daydreamapplications.sample.databinding.ActivitySampleBinding
 
 class DiffUtilSortActivity : AppCompatActivity() {
 
-    private val adapter = Adapter()
+    private val adapter = SimpleStringAdapter()
 
-    private val items: List<String> = listOf(
-        "Hello",
-        "World",
-        "What",
-        "A",
-        "Nice",
-        "Day"
-    )
+    private val items: List<String> = listOf("Hello", "World", "What", "A", "Nice", "Day")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar?.title = getString(R.string.diff_util_sorting)
-
+        supportActionBar?.setTitle(R.string.diff_util_sorting)
         adapter.viewModels = items
 
         ActivitySampleBinding.inflate(layoutInflater).apply {
@@ -51,11 +41,5 @@ class DiffUtilSortActivity : AppCompatActivity() {
         adapter.viewModels = newList // if useDiff = true items will animate to new positions
 
         return super.onOptionsItemSelected(item)
-    }
-
-    class Adapter : BindingRecyclerView.Adapter<String>() {
-
-        @LayoutRes
-        override fun getItemLayoutRes(position: Int): Int = R.layout.item_string
     }
 }
