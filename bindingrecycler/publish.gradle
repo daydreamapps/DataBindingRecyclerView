@@ -93,8 +93,8 @@ artifacts {
 bintray {
 //    user = properties.getProperty("bintray.user")
 //    key = properties.getProperty("bintray.apikey")
-    user = getProperty("bintray.user")
-    key = getProperty("bintray.apikey")
+    user = getLocalProperty("bintray.user")
+    key = getLocalProperty("bintray.apikey")
 
     configurations = ['archives']
     pkg {
@@ -114,7 +114,7 @@ bintray {
     }
 }
 
-def getProperty(name) {
+def getLocalProperty(name) {
     try {
         Properties properties = new Properties()
         properties.load(project.rootProject.file('local.properties').newDataInputStream())
