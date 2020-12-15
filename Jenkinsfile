@@ -24,7 +24,9 @@ pipeline {
                 stage('Check Style') {
                     steps {
                         sh 'echo "Check Style"'
-                        sh './gradlew :bindingrecycler:lintDebug'
+//                        sh './gradlew :bindingrecycler:lintDebug'
+                        sh './gradlew :bindingrecycler:lintRelease'
+                        androidLint()
                     }
                 }
 
@@ -43,7 +45,7 @@ pipeline {
             // archive release apk
             archiveArtifacts(
                     allowEmptyArchive: true,
-                    artifacts: 'app/build/outputs/apk/production/release/*.apk'
+                    artifacts: 'bindingrecycler/build/outputs/aar/bindingrecycler-release.aar'
             )
         }
     }
