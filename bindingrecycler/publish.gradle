@@ -3,13 +3,11 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 ext {
+    libraryVersionCode = 2
+    libraryVersion = "0.1.0"
+
     bintrayRepo = 'Common'
     bintrayName = 'DataBinding-RecyclerView'
-
-
-    'com.daydreamapplications'
-    'databinding-recyclerview'
-    '0.1.0'
 
     publishedGroupId = 'com.daydreamapplications'
     libraryName = 'DataBinding RecyclerView'
@@ -19,8 +17,6 @@ ext {
 
     siteUrl = 'https://github.com/daydreamapps/DataBindingRecyclerView'
     gitUrl = 'https://github.com/daydreamapps/DataBindingRecyclerView.git'
-
-    libraryVersion = '0.1.1'
 
     developerId = 'spatmore'
     developerName = 'Samuel Patmore'
@@ -77,6 +73,10 @@ task javadoc(type: Javadoc) {
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
 
+tasks.withType(Javadoc).all { // Required to prevent javadoc failing on Kotlin files
+    enabled = false
+}
+
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
@@ -110,8 +110,4 @@ bintray {
             desc = libraryDescription
         }
     }
-}
-
-tasks.withType(Javadoc).all { // Required to prevent javadoc failing on Kotlin files
-    enabled = false
 }
