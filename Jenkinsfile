@@ -52,7 +52,7 @@ pipeline {
 
             // execute & publish coverage report
 
-            jacoco classPattern: 'tmp/kotlin-classes/, bindingrecycler/build/tmp/kotlin-classes/debug'
+            jacoco classPattern: 'tmp/kotlin-classes/, bindingrecycler/build/tmp/kotlin-classes/debug',
             exclusionPattern: '**/*$*.*' +
             '**/*.xml' +
 '**/*.json' +
@@ -87,9 +87,9 @@ pipeline {
             '**/*View.*' +
 '**/*Args.*' +
             '**/*Adapter.*' +
-'**/*Dao.*'
-            execPattern: 'bindingrecycler/build/jacoco/**.exec'
-            sourceExclusionPattern: 'generated/**.*'
+'**/*Dao.*',
+            execPattern: 'bindingrecycler/build/jacoco/**.exec',
+            sourceExclusionPattern: 'generated/**.*',
             sourceInclusionPattern: '**/*.kt'
 
 //            jacoco(
