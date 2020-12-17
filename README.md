@@ -2,6 +2,8 @@
 
 Simple RecyclerView & Adapter for use in projects using DataBinding.
 
+[ ![Download](https://api.bintray.com/packages/daydreamapplications/Common/DataBinding-RecyclerView/images/download.svg) ](https://bintray.com/daydreamapplications/Common/DataBinding-RecyclerView/_latestVersion) [![Build Status](http://141.0.158.139:8080/buildStatus/icon?job=DataBinding+RecyclerView%2Fmaster)](http://141.0.158.139:8080/job/DataBinding%20RecyclerView/job/master/)
+
 # Introduction
 Andorid RecyclerViews do not need to be complex.
 DataBindingRecyclerView provides a simple solution to common implementation scenarios, with no boiler-plate code.
