@@ -92,6 +92,10 @@ pipeline {
                             '**/*Args.*' +
                             '**/*Adapter.*' +
                             '**/*Dao.*'
+
+            script {
+                sh 'curl -s https://codecov.io/bash | bash'
+            }
         }
     }
 }
