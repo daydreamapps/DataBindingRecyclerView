@@ -93,9 +93,10 @@ pipeline {
                             '**/*Adapter.*' +
                             '**/*Dao.*'
 
-            script {
-                sh 'curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml'
-            }
+            sh "curl -s https://codecov.io/bash | bash -s - -K"
+//            script {
+//                sh 'curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml'
+//            }
         }
     }
 }
