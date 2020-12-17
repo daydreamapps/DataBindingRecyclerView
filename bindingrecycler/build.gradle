@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 // Publishing Script
 apply from: "publish.gradle"
+apply from: "$project.rootDir/jacoco.gradle"
 
 android {
     compileSdkVersion 29
@@ -29,6 +30,19 @@ android {
 
     buildFeatures {
         dataBinding true
+    }
+
+    lintOptions {
+        abortOnError false
+        lintConfig file("../lint.xml")
+    }
+
+    testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
     }
 }
 
