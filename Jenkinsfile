@@ -24,7 +24,6 @@ pipeline {
                 stage('Check Style') {
                     steps {
                         sh 'echo "Check Style"'
-//                        sh './gradlew :bindingrecycler:lintDebug'
                         sh './gradlew :bindingrecycler:lintRelease'
                         androidLint()
                     }
@@ -42,15 +41,12 @@ pipeline {
 
     post {
         always {
-            // archive release apk
             archiveArtifacts(
                     allowEmptyArchive: true,
                     artifacts: 'bindingrecycler/build/outputs/aar/bindingrecycler-release.aar'
             )
 
             junit "**/bindingrecycler/build/test-results/testReleaseUnitTest/*.xml"
-
-            // execute & publish coverage report
 
             jacoco classPattern: 'tmp/kotlin-classes/, bindingrecycler/build/tmp/kotlin-classes/release',
                     execPattern: 'bindingrecycler/build/jacoco/**.exec',
