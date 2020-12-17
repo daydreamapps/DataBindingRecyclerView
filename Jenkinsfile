@@ -33,7 +33,7 @@ pipeline {
                 stage('Unit Tests') {
                     steps {
                         sh 'echo "Unit Tests"'
-                        sh './gradlew :bindingrecycler:testDebugUnitTest --stacktrace'
+                        sh './gradlew :bindingrecycler:testReleaseUnitTest --stacktrace'
                     }
                 }
             }
@@ -48,10 +48,55 @@ pipeline {
                     artifacts: 'bindingrecycler/build/outputs/aar/bindingrecycler-release.aar'
             )
 
-            junit "**/app/build/test-results/testDebugUnitTest/*.xml"
+            junit "**/app/build/test-results/testReleaseUnitTest/*.xml"
 
             // execute & publish coverage report
-            jacoco classPattern: 'tmp/kotlin-classes/, app/build/tmp/kotlin-classes/debug'
+
+            step([
+                    $class                : 'JacocoPublisher',
+                    execPattern           : 'bindingrecycler/build/jacoco/testReleaseUnitTest.exec',
+                    classPattern          : 'tmp/kotlin-classes/',
+                    sourceExclusionPattern: 'generated/**.*',
+                    sourceInclusionPattern: '**/*.kt',
+                    exclusionPattern      : '**/*$*.*' +
+                            '**/*.xml' +
+                            '**/*.json' +
+                            '**/R$*.class' +
+                            '**/BuildConfig.*' +
+                            '**/Manifest*.*' +
+                            '**/*Test*.*' +
+                            '**/com/example/databinding/*' +
+                            '**/com/example/generated/callback/*' +
+                            '**/android/databinding/*' +
+                            '**/androidx/databinding/*' +
+                            '**/di/module/*' +
+                            '**/*MapperImpl*.*' +
+                            '**/*$ViewInjector*.*' +
+                            '**/*$ViewBinder*.*' +
+                            '**/BuildConfig.*' +
+                            '**/*Component*.*' +
+                            '**/*BR*.*' +
+                            '**/Manifest*.*' +
+                            '**/*$Lambda$*.*' +
+                            '**/*Companion*.*' +
+                            '**/*Module.*' +
+                            '**/*Dagger*.*' +
+                            '**/*MembersInjector*.*' +
+                            '**/*_Factory*.*' +
+                            '**/*_Provide*Factory*.*' +
+                            '**/*Extensions*.*' +
+                            '**/*$Result.*' +
+                            '**/*$Result$*.*' +
+                            '**/*Activity.*' +
+                            '**/*Fragment.*' +
+                            '**/*View.*' +
+                            '**/*Args.*' +
+                            '**/*Adapter.*' +
+                            '**/*Dao.*'
+            ])
+//                  sourcePattern: 'src/main/java',
+//                  exclusionPattern: 'src/test*'
+//            jacoco classPattern: 'tmp/kotlin-classes/, app/build/tmp/kotlin-classes/release'
         }
     }
 }
