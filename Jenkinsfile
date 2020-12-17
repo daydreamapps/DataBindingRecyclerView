@@ -88,7 +88,7 @@ pipeline {
                             '**/*Adapter.*' +
                             '**/*Dao.*'
 
-            githubNotify description: 'This is a shorted example',  status: 'SUCCESS'
+//            githubNotify description: 'This is a shorted example',  status: 'SUCCESS'
 
             // diff to trigger build (hopefully)
 
