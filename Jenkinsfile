@@ -87,6 +87,8 @@ pipeline {
                             '**/*Args.*' +
                             '**/*Adapter.*' +
                             '**/*Dao.*'
+
+            githubNotify description: 'This is a shorted example',  status: 'SUCCESS'
         }
     }
 }
