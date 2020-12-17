@@ -47,6 +47,11 @@ pipeline {
                     allowEmptyArchive: true,
                     artifacts: 'bindingrecycler/build/outputs/aar/bindingrecycler-release.aar'
             )
+
+            junit "**/app/build/test-results/testDebugUnitTest/*.xml"
+
+            // execute & publish coverage report
+            jacoco classPattern: 'tmp/kotlin-classes/, app/build/tmp/kotlin-classes/debug'
         }
     }
 }
