@@ -48,7 +48,7 @@ pipeline {
                     artifacts: 'bindingrecycler/build/outputs/aar/bindingrecycler-release.aar'
             )
 
-            junit "**/app/build/test-results/testReleaseUnitTest/*.xml"
+            junit "**/bindingrecycler/build/test-results/testReleaseUnitTest/*.xml"
 
             // execute & publish coverage report
 
