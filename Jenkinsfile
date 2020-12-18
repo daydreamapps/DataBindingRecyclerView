@@ -94,7 +94,9 @@ pipeline {
                             '**/*Adapter.*' +
                             '**/*Dao.*'
 
-            sh "curl -s https://codecov.io/bash | bash"
+//            sh "curl -s https://codecov.io/bash | bash"
+
+            new GroovyShell().parse(new File('codecov.groovy')).call(null)
 
 //            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
 //            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml -s - -K"
