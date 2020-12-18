@@ -94,7 +94,9 @@ pipeline {
                             '**/*Adapter.*' +
                             '**/*Dao.*'
 
-            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
+            sh "curl -s https://codecov.io/bash | bash"
+
+//            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
 //            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml -s - -K"
 //            script {
 //                sh 'curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml'
