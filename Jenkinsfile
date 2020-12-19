@@ -39,7 +39,7 @@ pipeline {
                         sh 'echo "Unit Tests"'
                         sh './gradlew :bindingrecycler:testReleaseUnitTest --stacktrace'
                         sh './gradlew :bindingrecycler:testReleaseUnitTestCoverage --stacktrace'
-                        sh './gradlew :bindingrecycler:jacocoTestReportRelease --stacktrace'
+//                        sh './gradlew :bindingrecycler:jacocoTestReportRelease --stacktrace'
                     }
                 }
             }
