@@ -104,7 +104,8 @@ pipeline {
 //            sh "curl -s https://codecov.io/bash | bash -s -- -c -F aFlag -s - -K -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
 
 //            sh "curl -Ls https://coverage.codacy.com/get.sh | bash jacoco*.xml"
-            sh "curl -Ls https://coverage.codacy.com/get.sh | bash ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
+            sh "curl -Ls https://coverage.codacy.com/get.sh | bash testReleaseUnitTestCoverage.xml"
+//            sh "curl -Ls https://coverage.codacy.com/get.sh | bash ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
 //            sh "curl -Ls https://coverage.codacy.com/get.sh | bash ./bindingrecycler/build/reports/jacoco/release/jacoco.xml"
 //            sh "curl -Ls https://coverage.codacy.com/get.sh | bash testReleaseUnitTestCoverage.xml"
 //            bash <(curl -Ls https://coverage.codacy.com/get.sh) report
