@@ -96,10 +96,10 @@ pipeline {
 
 //            sh "curl -s https://codecov.io/bash | bash"
 
-            new GroovyShell().parse(new File('codecov.groovy')).call(null)
+//            new GroovyShell().parse(new File('codecov.groovy')).call(null)
 
 //            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
-//            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml -s - -K"
+            sh "curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml -s - -K"
 //            script {
 //                sh 'curl -s https://codecov.io/bash | bash -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml'
 //            }
