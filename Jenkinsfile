@@ -2,6 +2,11 @@ pipeline {
 
     agent any
 
+    triggers {
+        githubPush()
+        pollSCM('') // Enabling being build on Push
+    }
+
     stages {
         stage('Setup') {
             steps {
@@ -33,6 +38,8 @@ pipeline {
                     steps {
                         sh 'echo "Unit Tests"'
                         sh './gradlew :bindingrecycler:testReleaseUnitTest --stacktrace'
+                        sh './gradlew :bindingrecycler:testReleaseUnitTestCoverage --stacktrace'
+//                        sh './gradlew :bindingrecycler:jacocoTestReportRelease --stacktrace'
                     }
                 }
             }
@@ -87,6 +94,11 @@ pipeline {
                             '**/*Args.*' +
                             '**/*Adapter.*' +
                             '**/*Dao.*'
+
+            sh "curl -s https://codecov.io/bash | bash -v -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
+//            sh "curl -s https://codecov.io/bash | bash -v -Z -f ./bindingrecycler/build/reports/jacoco/testReleaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
+
+            sh "curl -Ls https://coverage.codacy.com/get.sh | bash testReleaseUnitTestCoverage.xml"
         }
     }
 }
