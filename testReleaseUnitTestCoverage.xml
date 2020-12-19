@@ -1,4 +1,3 @@
-<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd">
 <report name="bindingrecycler">
     <sessioninfo dump="1608412826404" id="Samuels-Mini-b0a45128" start="1608412822654" />
     <package name="com/daydreamapplications/bindingrecycler">
