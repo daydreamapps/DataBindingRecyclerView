@@ -96,6 +96,7 @@ class BindingRecyclerView @JvmOverloads constructor(
          */
         open fun onClick(rootView: View, viewModel: VM) {
             doOnClick.invoke(rootView, viewModel)
+            (viewModel as? OnClickListener)?.onClick(rootView)
         }
 
         /**
